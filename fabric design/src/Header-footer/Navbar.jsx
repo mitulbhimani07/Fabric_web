@@ -8,7 +8,7 @@ import {
   Menu,
   X
 } from 'lucide-react';
-
+import logo from '../assets/images/logo.png'; // Assuming you have a logo image
 // Dropdown menu structure
 const menuItems = [
   {
@@ -91,10 +91,10 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <button
-            className="h-10 md:h-12 w-24 md:w-32 bg-white border border-gray-200 flex items-center justify-center hover:border-green-600 transition duration-200"
+            className="h-10 md:h-12 w-38 md:w-42 bg-white flex items-center justify-center "
             onClick={() => console.log('Logo clicked')}
           >
-            <div className="font-bold text-yellow-500 text-sm md:text-base">FABRIC HUB</div>
+            <img src={logo} alt=""  />
           </button>
         </div>
 
