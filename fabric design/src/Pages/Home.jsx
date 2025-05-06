@@ -30,49 +30,49 @@ const TrendingDesigns = () => {
   // Products data
   const products = [
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/products/5_2_db2cb20c-da37-4c7c-89f5-1e79533f15e4.jpg?v=1743752590&width=600",
       title: "Zinc Yellow Banarasi Ektara Silk Handloom Fabric With Floral Motifs",
       price: "Rs. 5,979.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/products/281788-1.jpg?v=1743752307&width=800",
       title: "Yellowish Orange Shade Printed Dupion Silk Fabric",
       price: "Rs. 1,854.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/files/486836-1.jpg?v=1743750607&width=800",
       title: "Yellow-Orange Printed Pichwai Rawsilk Fabric With Embroidery",
       price: "Rs. 1,848.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/files/477896-02.jpg?v=1743750972&width=800",
       title: "Yellow-Orange Georgette Fabric With Floral Print",
       price: "Rs. 974.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/products/455061-02_17d207d5-0408-4ee6-b81c-7003e988efc0.jpg?v=1743751319&width=800",
       title: "Yellow Tussar Floral Printed Fabric",
       price: "Rs. 853.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabriccollection.com.au/cdn/shop/products/silk-cotton-fabric-periwinkle_400x.jpg?v=1674895662",
       title: "Blue Silk Cotton Blend",
       price: "Rs. 2,150.00",
       category: "new"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://hpsingh-storage.s3.ap-south-1.amazonaws.com/media/2162625-(4).jpg",
       title: "Green Chanderi Silk",
       price: "Rs. 1,599.00",
       category: "new"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://5.imimg.com/data5/ECOM/Default/2023/1/IO/EZ/IF/85504720/tradeunoday1-776-500x500.jpg",
       title: "Red Embroidered Organza",
       price: "Rs. 3,250.00",
       category: "new"
