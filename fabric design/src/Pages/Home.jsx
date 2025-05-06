@@ -5,21 +5,21 @@ const TrendingDesigns = () => {
   // Hero Slider Data
   const heroSlides = [
     {
-      backgroundImage: "/api/placeholder/1200/600",
+      backgroundImage: "https://fabricbysinghanias.com/cdn/shop/files/desktop_banner.png?v=1742377604&width=2000",
       title: "Underwater",
       titleLarge: "Monsters",
       subtitle: "Saltwater Crocodile",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      backgroundImage: "/api/placeholder/1200/600",
+      backgroundImage: "https://fabricbysinghanias.com/cdn/shop/files/9.png?v=1739023978&width=2000",
       title: "The",
       titleLarge: "Gates of Hell",
       subtitle: "Special inside volcanoes",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      backgroundImage: "/api/placeholder/1200/600",
+      backgroundImage: "https://fabricbysinghanias.com/cdn/shop/files/2_12_2024_db.jpg?v=1733141503&width=2000",
       title: "Exploring",
       titleLarge: "Deep Caves",
       subtitle: "Real Time Capsules",
