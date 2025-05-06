@@ -30,49 +30,49 @@ const TrendingDesigns = () => {
   // Products data
   const products = [
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/products/5_2_db2cb20c-da37-4c7c-89f5-1e79533f15e4.jpg?v=1743752590&width=600",
       title: "Zinc Yellow Banarasi Ektara Silk Handloom Fabric With Floral Motifs",
       price: "Rs. 5,979.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/products/281788-1.jpg?v=1743752307&width=800",
       title: "Yellowish Orange Shade Printed Dupion Silk Fabric",
       price: "Rs. 1,854.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/files/486836-1.jpg?v=1743750607&width=800",
       title: "Yellow-Orange Printed Pichwai Rawsilk Fabric With Embroidery",
       price: "Rs. 1,848.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/files/477896-02.jpg?v=1743750972&width=800",
       title: "Yellow-Orange Georgette Fabric With Floral Print",
       price: "Rs. 974.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabricbysinghanias.com/cdn/shop/products/455061-02_17d207d5-0408-4ee6-b81c-7003e988efc0.jpg?v=1743751319&width=800",
       title: "Yellow Tussar Floral Printed Fabric",
       price: "Rs. 853.00",
       category: "bestseller"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://fabriccollection.com.au/cdn/shop/products/silk-cotton-fabric-periwinkle_400x.jpg?v=1674895662",
       title: "Blue Silk Cotton Blend",
       price: "Rs. 2,150.00",
       category: "new"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://hpsingh-storage.s3.ap-south-1.amazonaws.com/media/2162625-(4).jpg",
       title: "Green Chanderi Silk",
       price: "Rs. 1,599.00",
       category: "new"
     },
     {
-      image: "/api/placeholder/400/400",
+      image: "https://5.imimg.com/data5/ECOM/Default/2023/1/IO/EZ/IF/85504720/tradeunoday1-776-500x500.jpg",
       title: "Red Embroidered Organza",
       price: "Rs. 3,250.00",
       category: "new"
@@ -295,73 +295,11 @@ const TrendingDesigns = () => {
                 backgroundImage: `url(${slide.backgroundImage})`
               }}
             >
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
-              
-              <div className="relative z-20 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto w-full">
-                {/* Title Section */}
-                <div className="overflow-hidden mb-4 md:mb-8">
-                  <h2 
-                    className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light transform transition-all duration-700 delay-100 ${
-                      currentSlide === index && (initialLoad || !scaleOut) 
-                        ? 'translate-y-0 opacity-100' 
-                        : '-translate-y-16 opacity-0'
-                    }`}
-                  >
-                    {slide.title}
-                  </h2>
-                  <h1 
-                    className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold transform transition-all duration-700 delay-200 ${
-                      currentSlide === index && (initialLoad || !scaleOut) 
-                        ? 'translate-y-0 opacity-100' 
-                        : '-translate-y-16 opacity-0'
-                    }`}
-                  >
-                    {slide.titleLarge}
-                  </h1>
-                  
-                  {/* Separator line */}
-                  <div className="relative h-px w-full bg-transparent mt-2 md:mt-4 mb-4 md:mb-8">
-                    <div 
-                      className={`h-0.5 bg-white transform transition-all duration-1000 delay-300 ${
-                        currentSlide === index && (initialLoad || !scaleOut) 
-                          ? 'w-20 sm:w-32 md:w-48 opacity-100' 
-                          : 'w-0 opacity-0'
-                      }`}
-                    ></div>
-                  </div>
-                </div>
-                
-                {/* Info Section */}
-                <div className="max-w-xs sm:max-w-sm md:max-w-md">
-                  <div 
-                    className={`transform transition-all duration-700 delay-300 ${
-                      currentSlide === index && (initialLoad || !scaleOut) 
-                        ? 'translate-y-0 opacity-100' 
-                        : 'translate-y-32 opacity-0'
-                    }`}
-                  >
-                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-medium mb-2 sm:mb-4">{slide.subtitle}</h3>
-                    <p className="text-white text-sm sm:text-base opacity-80">{slide.body}</p>
-                  </div>
-                </div>
-              </div>
             </div>
           ))}
         </div>
         
-        {/* Navigation Button - Only right button, only on desktop */}
-        <div className="hidden md:block absolute bottom-20 sm:bottom-24 md:bottom-32 lg:bottom-40 right-4 sm:right-8 md:right-12 lg:right-16 z-30">
-          <button
-            onClick={goToNextSlide}
-            onMouseEnter={() => clearInterval(heroAutoplayTimerRef.current)}
-            onMouseLeave={startHeroAutoplay}
-            className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300 transform hover:scale-110"
-            disabled={animating}
-          >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
-          </button>
-        </div>
+       
         
         {/* Slide Indicators */}
         <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-3 z-30">
