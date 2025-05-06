@@ -143,7 +143,7 @@ const EnhancedSlider = () => {
   
   return (
     <section 
-      className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
+      className="relative w-full h-130 sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
