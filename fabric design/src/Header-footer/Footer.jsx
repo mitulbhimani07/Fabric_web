@@ -1,56 +1,136 @@
 import React from 'react';
+import { 
+  RotateCcw, 
+  Shield, 
+  Truck, 
+  Headphones, 
+  Instagram, 
+  Facebook, 
+  Twitter, 
+  Youtube
+} from 'lucide-react';
 
 function Footer() {
   return (
-    <footer className="bg-stone-800 text-white py-10 px-6 md:px-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Brand Info */}
-        <div>
-          <h3 className="text-2xl font-bold text-amber-400 mb-2">Texora</h3>
-          <p className="text-stone-300 text-sm">
-            Premium handcrafted fabrics blending tradition and elegance. Trusted by designers and artisans worldwide.
+    <footer className="w-full bg-green-900 text-white">
+      {/* Top services section */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 py-4 sm:py-6 border-b border-white/10 px-3 sm:px-4">
+        <div className="flex flex-col items-center text-center">
+          <RotateCcw size={20} className="mb-1 sm:mb-2" />
+          <span className="text-xs uppercase font-medium">Free returns</span>
+        </div>
+        
+        <div className="flex flex-col items-center text-center">
+          <Shield size={20} className="mb-1 sm:mb-2" />
+          <span className="text-xs uppercase font-medium">Safe & secure payment</span>
+        </div>
+        
+        <div className="flex flex-col items-center text-center">
+          <Truck size={20} className="mb-1 sm:mb-2" />
+          <span className="text-xs uppercase font-medium">Free Standard Delivery</span>
+        </div>
+        
+        <div className="flex flex-col items-center text-center">
+          <Headphones size={20} className="mb-1 sm:mb-2" />
+          <span className="text-xs uppercase font-medium">Customer Service</span>
+        </div>
+      </div>
+      
+      {/* Main footer content */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
+        {/* Club Lacoste Section */}
+        <div className="lg:col-span-2 flex flex-col items-center sm:items-start">
+          <div className="w-32 sm:w-36 mb-4 border border-white p-2 sm:p-3">
+            <div className="text-center">
+              <div className="text-xs font-bold">LE CLUB</div>
+              <div className="text-sm font-bold">LACOSTE</div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Policies Column */}
+        <div className="lg:col-span-2 w-full">
+          <div className="mb-3 sm:mb-4 border-b border-white/10 pb-2 sm:border-0 sm:pb-0">
+            <h3 className="text-base font-medium">Policies</h3>
+          </div>
+          <ul className="space-y-2 mb-6 sm:mb-0">
+            <li><a href="#" className="text-sm hover:underline">Terms & Conditions</a></li>
+            <li><a href="#" className="text-sm hover:underline">Privacy Policy</a></li>
+            <li><a href="#" className="text-sm hover:underline">Terms of Service</a></li>
+            <li><a href="#" className="text-sm hover:underline">Refund policy</a></li>
+            <li><a href="#" className="text-sm hover:underline">Blogs</a></li>
+            <li><a href="#" className="text-sm hover:underline">About us</a></li>
+          </ul>
+        </div>
+        
+        {/* Information Column */}
+        <div className="lg:col-span-3 w-full sm:ps-0 lg:ps-9">
+          <div className="mb-3 sm:mb-4 border-b border-white/10 pb-2 sm:border-0 sm:pb-0">
+            <h3 className="text-base font-medium">Information</h3>
+          </div>
+          <ul className="space-y-2 mb-6 sm:mb-0">
+            <li><a href="#" className="text-sm hover:underline">Textile Abbreviations</a></li>
+            <li><a href="#" className="text-sm hover:underline">Yarn Denomination</a></li>
+            <li><a href="#" className="text-sm hover:underline">Woven Fabrics</a></li>
+            <li><a href="#" className="text-sm hover:underline">Fabric Categorisation</a></li>
+            <li><a href="#" className="text-sm hover:underline">Care Instructions</a></li>
+          </ul>
+        </div>
+        
+        {/* Help Column */}
+        <div className="lg:col-span-3 w-full">
+          <div className="mb-3 sm:mb-4 border-b border-white/10 pb-2 sm:border-0 sm:pb-0">
+            <h3 className="text-base font-medium">HELP & CONTACTS</h3>
+          </div>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-sm hover:underline">FAQ</a></li>
+            <li><a href="#" className="text-sm hover:underline">By Email</a></li>
+            <li><a href="#" className="text-sm hover:underline">By phone</a></li>
+            <li><a href="#" className="text-sm hover:underline">0120-4092045 *</a></li>
+          </ul>
+          <p className="text-xs mt-4">
+            Our Customer Service team is at your service for you from Monday to Friday from 10:30 a.m. To 5:30 p.m.
           </p>
         </div>
-
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold text-lg mb-3">Quick Links</h4>
-          <ul className="space-y-2 text-stone-300 text-sm">
-            <li><a href="#" className="hover:text-amber-400 transition">Home</a></li>
-            <li><a href="#" className="hover:text-amber-400 transition">Shop</a></li>
-            <li><a href="#" className="hover:text-amber-400 transition">About Us</a></li>
-            <li><a href="#" className="hover:text-amber-400 transition">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Customer Service */}
-        <div>
-          <h4 className="font-semibold text-lg mb-3">Customer Service</h4>
-          <ul className="space-y-2 text-stone-300 text-sm">
-            <li><a href="#" className="hover:text-amber-400 transition">Shipping & Returns</a></li>
-            <li><a href="#" className="hover:text-amber-400 transition">FAQs</a></li>
-            <li><a href="#" className="hover:text-amber-400 transition">Size Guide</a></li>
-            <li><a href="#" className="hover:text-amber-400 transition">Terms & Conditions</a></li>
-          </ul>
-        </div>
-
-        {/* Contact Info */}
-        <div>
-          <h4 className="font-semibold text-lg mb-3">Get In Touch</h4>
-          <p className="text-stone-300 text-sm">123 Fabric Lane, Surat, India</p>
-          <p className="text-stone-300 text-sm mt-1">Email: support@marutdron.com</p>
-          <p className="text-stone-300 text-sm mt-1">Phone: +91 98765 43210</p>
-          <div className="flex space-x-4 mt-4">
-            <a href="#" className="hover:text-amber-400 transition">🌐</a>
-            <a href="#" className="hover:text-amber-400 transition">📘</a>
-            <a href="#" className="hover:text-amber-400 transition">📸</a>
+        
+        {/* Social Media */}
+        <div className="lg:col-span-2 w-full flex flex-col space-y-4 mt-4 sm:mt-0">
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-4">
+            <a href="#" className="flex items-center group">
+              <Instagram size={18} className="mr-2" />
+              <span className="text-sm group-hover:underline">Instagram</span>
+            </a>
+            <a href="#" className="flex items-center group">
+              <Facebook size={18} className="mr-2" />
+              <span className="text-sm group-hover:underline">Facebook</span>
+            </a>
+            <a href="#" className="flex items-center group">
+              <Twitter size={18} className="mr-2" />
+              <span className="text-sm group-hover:underline">Twitter</span>
+            </a>
+            <a href="#" className="flex items-center group">
+              <Youtube size={18} className="mr-2" />
+              <span className="text-sm group-hover:underline">Youtube</span>
+            </a>
+          </div>
+          
+          {/* Newsletter */}
+          <div className="w-full mt-6 sm:mt-4">
+            <div className="flex items-center border-b border-white/30">
+              <span className="text-xs sm:text-sm mr-2">Email address</span>
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                className="w-full py-2 bg-transparent border-none text-white text-xs sm:text-sm focus:outline-none"
+              />
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom Line */}
-      <div className="mt-10 border-t border-stone-700 pt-6 text-center text-sm text-stone-400">
-        &copy; {new Date().getFullYear()} Marut Dron. All rights reserved.
+      
+      {/* Copyright section */}
+      <div className="border-t border-white/10 p-4 text-center text-xs">
+        <p>© 2025 Lacoste. All rights reserved.</p>
       </div>
     </footer>
   );
