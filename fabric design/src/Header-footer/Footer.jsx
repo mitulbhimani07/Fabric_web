@@ -115,7 +115,7 @@ function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="w-full mt-6 sm:mt-4 text-left sm:text-center">
+          {/* <div className="w-full mt-6 sm:mt-4 text-left sm:text-center">
             <div className="flex items-center border-b border-white/30 justify-start sm:justify-center">
               <input
                 type="email"
@@ -123,7 +123,7 @@ function Footer() {
                 className="w-full py-2 bg-transparent border-none text-white text-xs sm:text-sm focus:outline-none text-left sm:text-center"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
