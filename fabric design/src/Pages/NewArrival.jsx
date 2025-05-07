@@ -3,13 +3,13 @@ import { ChevronLeft, ChevronRight, Eye, ShoppingBag, Filter, ArrowUpDown, Heart
 
 const NewArrival = () => {
   // Banner image for the top of the page
-  const bannerImage = "/api/placeholder/1920/600";
+  const bannerImage = "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80";
 
   // Products data for new arrivals
   const products = [
     {
       id: 1,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Royal Blue Banarasi Silk With Gold Zari Work",
       price: "Rs. 7,499.00",
       originalPrice: "Rs. 9,999.00",
@@ -19,7 +19,7 @@ const NewArrival = () => {
     },
     {
       id: 2,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1520004434532-668416a08753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Emerald Green Chanderi Silk With Silver Motifs",
       price: "Rs. 4,250.00",
       originalPrice: "Rs. 5,000.00",
@@ -29,7 +29,7 @@ const NewArrival = () => {
     },
     {
       id: 3,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Crimson Red Embroidered Raw Silk Fabric",
       price: "Rs. 6,750.00",
       originalPrice: "Rs. 8,500.00",
@@ -39,7 +39,7 @@ const NewArrival = () => {
     },
     {
       id: 4,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Deep Purple Georgette With Hand Embroidery",
       price: "Rs. 3,999.00",
       originalPrice: "Rs. 5,499.00",
@@ -49,7 +49,7 @@ const NewArrival = () => {
     },
     {
       id: 5,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Ivory Tussar Silk With Gold Border",
       price: "Rs. 5,250.00",
       originalPrice: "Rs. 6,500.00",
@@ -59,7 +59,7 @@ const NewArrival = () => {
     },
     {
       id: 6,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1521378159835-5f6c0dc5e8f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Ochre Yellow Pure Cotton With Block Print",
       price: "Rs. 2,799.00",
       originalPrice: "Rs. 3,499.00",
@@ -69,7 +69,7 @@ const NewArrival = () => {
     },
     {
       id: 7,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Teal Blue Organza With Floral Embroidery",
       price: "Rs. 4,850.00",
       originalPrice: "Rs. 5,999.00",
@@ -79,7 +79,7 @@ const NewArrival = () => {
     },
     {
       id: 8,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Dusty Rose Linen Blend Textured Fabric",
       price: "Rs. 3,650.00",
       originalPrice: "Rs. 4,500.00",
@@ -89,7 +89,7 @@ const NewArrival = () => {
     },
     {
       id: 9,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1516822003754-cca485356ecb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Midnight Black Velvet With Gold Thread Work",
       price: "Rs. 8,250.00",
       originalPrice: "Rs. 11,000.00",
@@ -99,7 +99,7 @@ const NewArrival = () => {
     },
     {
       id: 10,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Mint Green Chiffon With Silver Sequins",
       price: "Rs. 3,999.00",
       originalPrice: "Rs. 4,999.00",
@@ -109,7 +109,7 @@ const NewArrival = () => {
     },
     {
       id: 11,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Coral Pink Kanjivaram Silk With Temple Border",
       price: "Rs. 9,999.00",
       originalPrice: "Rs. 12,999.00",
@@ -119,7 +119,7 @@ const NewArrival = () => {
     },
     {
       id: 12,
-      image: "/api/placeholder/400/400",
+      image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
       title: "Slate Grey Pashmina Blend With Embroidery",
       price: "Rs. 7,250.00",
       originalPrice: "Rs. 8,500.00",
@@ -242,7 +242,7 @@ const NewArrival = () => {
           }}
         >
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 bg-b bg-opacity-40"></div>
         </div>
         
         {/* Content */}
@@ -357,7 +357,7 @@ const NewArrival = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Product Image Container */}
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-gray-100 relative">
+              <div className="aspect-square overflow-hidden mb-3 bg-gray-100 relative">
                 {/* Image */}
                 <img 
                   src={product.image} 

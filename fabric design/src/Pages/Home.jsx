@@ -276,72 +276,25 @@ const TrendingDesigns = () => {
     <>
       {/* Hero Slider Section */}
       <section 
-        className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
+        className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         <div 
           ref={sliderRef} 
-          className={`w-full h-full transition-transform duration-500 ease-in-out ${scaleOut ? 'scale-90' : 'scale-100'}`}
+          className={`w-full h-120 transition-transform duration-500 ease-in-out ${scaleOut ? 'scale-90' : 'scale-100'}`}
         >
           {heroSlides.map((slide, index) => (
             <div 
               key={index}
-              className={`absolute inset-0 flex items-center w-full h-full bg-cover bg-center transition-opacity duration-500 ${
+              className={`absolute inset-0 flex items-center w-full h-120 bg-cover bg-center transition-opacity duration-500 ${
                 currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
               }`}
               style={{ 
                 backgroundImage: `url(${slide.backgroundImage})`
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
-              
-              <div className="relative z-20 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto w-full">
-                <div className="overflow-hidden mb-4 md:mb-8">
-                  <h2 
-                    className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light transform transition-all duration-700 delay-100 ${
-                      currentSlide === index && (initialLoad || !scaleOut) 
-                        ? 'translate-y-0 opacity-100' 
-                        : '-translate-y-16 opacity-0'
-                    }`}
-                  >
-                    {slide.title}
-                  </h2>
-                  <h1 
-                    className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold transform transition-all duration-700 delay-200 ${
-                      currentSlide === index && (initialLoad || !scaleOut) 
-                        ? 'translate-y-0 opacity-100' 
-                        : '-translate-y-16 opacity-0'
-                    }`}
-                  >
-                    {slide.titleLarge}
-                  </h1>
-                  
-                  <div className="relative h-px w-full bg-transparent mt-2 md:mt-4 mb-4 md:mb-8">
-                    <div 
-                      className={`h-0.5 bg-white transform transition-all duration-1000 delay-300 ${
-                        currentSlide === index && (initialLoad || !scaleOut) 
-                          ? 'w-20 sm:w-32 md:w-48 opacity-100' 
-                          : 'w-0 opacity-0'
-                      }`}
-                    ></div>
-                  </div>
-                </div>
-                
-                <div className="max-w-xs sm:max-w-sm md:max-w-md">
-                  <div 
-                    className={`transform transition-all duration-700 delay-300 ${
-                      currentSlide === index && (initialLoad || !scaleOut) 
-                        ? 'translate-y-0 opacity-100' 
-                        : 'translate-y-32 opacity-0'
-                    }`}
-                  >
-                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-medium mb-2 sm:mb-4">{slide.subtitle}</h3>
-                    <p className="text-white text-sm sm:text-base opacity-80">{slide.body}</p>
-                  </div>
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -370,7 +323,7 @@ const TrendingDesigns = () => {
               onMouseEnter={() => clearInterval(heroAutoplayTimerRef.current)}
               onMouseLeave={startHeroAutoplay}
               className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full transition-all duration-300 ${
-                currentSlide === index ? 'bg-white w-6 sm:w-8' : 'bg-white bg-opacity-50'
+                currentSlide === index ? 'bg-green-700 w-6 sm:w-18' : 'bg-black bg-opacity-50'
               }`}
               disabled={animating}
             ></button>
