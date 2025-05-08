@@ -696,7 +696,7 @@ const TrendingDesigns = () => {
       </section>
 
       {/* Fabric Story Section */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      {/* <section className="relative py-24 bg-white overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
           <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 300L1440 0" stroke="black" strokeWidth="0.5" strokeDasharray="5,5" />
@@ -782,7 +782,7 @@ const TrendingDesigns = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
