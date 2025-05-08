@@ -9,6 +9,7 @@ import {
   Twitter,
   Youtube
 } from 'lucide-react';
+import logo from '../assets/images/logo.png'; // Assuming you have a logo image
 
 function Footer() {
   return (
@@ -40,10 +41,10 @@ function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
         {/* Club Lacoste Section */}
         <div className="lg:col-span-2 flex flex-col items-center sm:items-start">
-          <div className="w-32 sm:w-36 mb-4 border border-white p-2 sm:p-3 text-left sm:text-center">
+          <div className="w-32 sm:w-36 mb-4  p-2 sm:p-3 text-left sm:text-center">
             <div>
-              <div className="text-xs font-bold">LE CLUB</div>
-              <div className="text-sm font-bold">LACOSTE</div>
+              <div className="text-xl font-bold">FABRIC HUB</div>
+          
             </div>
           </div>
         </div>
