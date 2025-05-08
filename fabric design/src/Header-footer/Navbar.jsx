@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Search,
   MapPin,
@@ -26,25 +26,63 @@ const menuItems = [
     label: "FABRICS",
     link: "/fabrics",
     submenu: [
-      { label: "Cotton", items: ["Premium Cotton", "Printed Cotton", "Organic Cotton"] },
-      { label: "Silk & Satin", items: ["Raw Silk", "Satin Shine", "Printed Satin"] },
-      { label: "Linen", items: ["Natural Linen", "Printed Linen", "Wrinkle-Free Linen"] },
-      { label: "Natural Fibers", items: ["Hemp", "Bamboo", "Jute"] }
+      { label: "Cotton", items: [
+        { name: "Premium Cotton", link: "/fabrics/cotton/premium" },
+        { name: "Printed Cotton", link: "/fabrics/cotton/printed" },
+        { name: "Organic Cotton", link: "/fabrics/cotton/organic" }
+      ]},
+      { label: "Silk & Satin", items: [
+        { name: "Raw Silk", link: "/fabrics/silk/raw" },
+        { name: "Satin Shine", link: "/fabrics/silk/satin-shine" },
+        { name: "Printed Satin", link: "/fabrics/silk/printed" }
+      ]},
+      { label: "Linen", items: [
+        { name: "Natural Linen", link: "/fabrics/linen/natural" },
+        { name: "Printed Linen", link: "/fabrics/linen/printed" },
+        { name: "Wrinkle-Free Linen", link: "/fabrics/linen/wrinkle-free" }
+      ]},
+      { label: "Natural Fibers", items: [
+        { name: "Hemp", link: "/fabrics/natural/hemp" },
+        { name: "Bamboo", link: "/fabrics/natural/bamboo" },
+        { name: "Jute", link: "/fabrics/natural/jute" }
+      ]}
     ]
   },
   {
     label: "PRINTS & PATTERNS",
+    link: "/prints",
     submenu: [
-      { label: "Designer Prints", items: ["Floral Prints", "Geometric", "Digital Prints"] },
-      { label: "Embroidered", items: ["Zari Work", "Thread Work", "Mirror Work"] }
+      { label: "Designer Prints", items: [
+        { name: "Floral Prints", link: "/prints/designer/floral" },
+        { name: "Geometric", link: "/prints/designer/geometric" },
+        { name: "Digital Prints", link: "/prints/designer/digital" }
+      ]},
+      { label: "Embroidered", items: [
+        { name: "Zari Work", link: "/prints/embroidered/zari" },
+        { name: "Thread Work", link: "/prints/embroidered/thread" },
+        { name: "Mirror Work", link: "/prints/embroidered/mirror" }
+      ]}
     ]
   },
   {
     label: "HOME & DECOR",
+    link: "/home-decor",
     submenu: [
-      { label: "Upholstery", items: ["Velvet", "Jacquard", "Textured"] },
-      { label: "Curtains", items: ["Sheer", "Blackout", "Printed"] },
-      { label: "Bedding", items: ["Quilts", "Duvet Covers", "Sheets"] }
+      { label: "Upholstery", items: [
+        { name: "Velvet", link: "/home-decor/upholstery/velvet" },
+        { name: "Jacquard", link: "/home-decor/upholstery/jacquard" },
+        { name: "Textured", link: "/home-decor/upholstery/textured" }
+      ]},
+      { label: "Curtains", items: [
+        { name: "Sheer", link: "/home-decor/curtains/sheer" },
+        { name: "Blackout", link: "/home-decor/curtains/blackout" },
+        { name: "Printed", link: "/home-decor/curtains/printed" }
+      ]},
+      { label: "Bedding", items: [
+        { name: "Quilts", link: "/home-decor/bedding/quilts" },
+        { name: "Duvet Covers", link: "/home-decor/bedding/duvet-covers" },
+        { name: "Sheets", link: "/home-decor/bedding/sheets" }
+      ]}
     ]
   }
 ];
@@ -56,6 +94,7 @@ export default function Navbar() {
   const [cartCount, setCartCount] = useState(0);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -64,11 +103,20 @@ export default function Navbar() {
 
   const handleSearch = (e) => {
     if (e) e.preventDefault();
-    console.log('Searching for:', searchQuery);
+    if (searchQuery.trim()) {
+      navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+    }
   };
 
   const handleMenuEnter = (index) => setActiveMenu(index);
   const handleMenuLeave = () => setActiveMenu(null);
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setActiveMenu(null);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md">
@@ -78,7 +126,7 @@ export default function Navbar() {
           <span className="text-sm md:text-base">New Arrivals: Premium Cotton Collection</span>
           <button
             className="text-pink-300 font-bold ml-2 hover:underline cursor-pointer"
-            onClick={() => console.log('Shop now clicked')}
+            onClick={() => handleNavigation('/newarrival')}
           >
             SHOP NOW
           </button>
@@ -95,13 +143,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex items-center">
-          <button
-            className="h-10 md:h-12 w-38 md:w-42 bg-white flex items-center justify-center "
-            onClick={() => console.log('Logo clicked')}
-          >
-            <img src={logo} alt=""  />
-          </button>
-        </div>
+            <Link to="/" className="h-10 md:h-12 w-38 md:w-42 bg-white flex items-center justify-center">
+              <img src={logo} alt="Logo" />
+            </Link>
+          </div>
 
           {/* Desktop Search */}
           <div className="hidden md:flex flex-1 mx-6">
@@ -124,7 +169,10 @@ export default function Navbar() {
 
           {/* Icons */}
           <div className="flex items-center">
-            <button className="hidden md:flex items-center mr-4 lg:mr-6 hover:text-green-600">
+            <button 
+              className="hidden md:flex items-center mr-4 lg:mr-6 hover:text-green-600"
+              onClick={() => handleNavigation('/stores')}
+            >
               <MapPin size={20} className="text-green-800 mr-1" />
               <div className="text-xs">
                 <div className="font-bold text-green-800">STORE LOCATION</div>
@@ -132,7 +180,10 @@ export default function Navbar() {
               </div>
             </button>
 
-            <button className="hidden sm:flex items-center mr-4 lg:mr-6 hover:text-green-600">
+            <button 
+              className="hidden sm:flex items-center mr-4 lg:mr-6 hover:text-green-600"
+              onClick={() => handleNavigation('/account')}
+            >
               <User size={20} className="text-green-800 mr-1" />
               <div className="text-xs">
                 <div>Login / Signup</div>
@@ -140,7 +191,10 @@ export default function Navbar() {
               </div>
             </button>
 
-            <button className="sm:hidden mr-3 hover:text-green-600">
+            <button 
+              className="sm:hidden mr-3 hover:text-green-600"
+              onClick={() => handleNavigation('/account')}
+            >
               <User size={20} className="text-green-800" />
             </button>
 
@@ -190,12 +244,13 @@ export default function Navbar() {
                 onMouseEnter={() => handleMenuEnter(index)}
                 onMouseLeave={handleMenuLeave}
               >
-                <div className={`py-3 px-6 flex items-center hover:bg-gray-100 transition cursor-pointer ${activeMenu === index ? 'bg-gray-100 text-green-800' : ''}`}>
-                  <Link to={item.link || "#"}>
-                    <span className="text-sm font-semibold text-gray-800">{item.label}</span>
-                  </Link>
+                <Link 
+                  to={item.link}
+                  className={`py-3 px-6 flex items-center hover:bg-gray-100 transition cursor-pointer ${activeMenu === index ? 'bg-gray-100 text-green-800' : ''}`}
+                >
+                  <span className="text-sm font-semibold text-gray-800">{item.label}</span>
                   {item.submenu.length > 0 && <ChevronDown size={14} className="ml-1 text-green-800" />}
-                </div>
+                </Link>
 
                 {activeMenu === index && item.submenu.length > 0 && (
                   <div className="absolute left-0 bg-white shadow-lg border border-gray-200 z-20 w-64">
@@ -204,13 +259,13 @@ export default function Navbar() {
                         <div className="font-medium text-green-800 mb-2">{submenu.label}</div>
                         <div className="grid">
                           {submenu.items.map((subItem, idx) => (
-                            <button
+                            <Link
                               key={idx}
+                              to={subItem.link}
                               className="text-sm py-1 text-left text-gray-700 hover:text-green-800 transition"
-                              onClick={() => console.log(`Selected: ${submenu.label} > ${subItem}`)}
                             >
-                              {subItem}
-                            </button>
+                              {subItem.name}
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -219,28 +274,66 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <div className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition">
-              <Link to="/newarrival"><span className="text-sm font-semibold text-gray-800">NEW ARRIVAL</span></Link>
-            </div>
-            <div className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition">
-              <Link to="/blog"><span className="text-sm font-semibold text-gray-800">BLOG</span></Link>
-            </div>
-            <div className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition">
-              <Link to="/bulkorder"><span className="text-sm font-semibold text-gray-800">BULK ORDER</span></Link>
-            </div>
+            <Link 
+              to="/newarrival"
+              className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition"
+            >
+              <span className="text-sm font-semibold text-gray-800">NEW ARRIVAL</span>
+            </Link>
+            <Link 
+              to="/blog"
+              className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition"
+            >
+              <span className="text-sm font-semibold text-gray-800">BLOG</span>
+            </Link>
+            <Link 
+              to="/bulkorder"
+              className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition"
+            >
+              <span className="text-sm font-semibold text-gray-800">BULK ORDER</span>
+            </Link>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-b border-gray-200">
-            <Link to="/"><div className="border-t border-gray-100 py-3 px-4 font-semibold text-sm">HOME</div></Link>
-            <div className="border-t border-gray-100 py-3 px-4 font-semibold text-sm">ABOUT</div>
+            <Link 
+              to="/"
+              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              HOME
+            </Link>
+            <Link 
+              to="/about"
+              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              ABOUT
+            </Link>
             {menuItems.slice(2).map((item, index) => (
-              <MobileMenuItem key={index} item={item} />
+              <MobileMenuItem 
+                key={index} 
+                item={item} 
+                onNavigate={handleNavigation}
+                closeMenu={() => setMobileMenuOpen(false)}
+              />
             ))}
-            <div className="border-t border-gray-100 py-3 px-4 font-semibold text-sm">BLOG</div>
-            <div className="border-t border-gray-100 py-3 px-4 font-semibold text-sm">CONTACT US</div>
+            <Link 
+              to="/blog"
+              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              BLOG
+            </Link>
+            <Link 
+              to="/contact"
+              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              CONTACT US
+            </Link>
           </div>
         )}
       </div>
@@ -264,14 +357,28 @@ export default function Navbar() {
   );
 }
 
-function MobileMenuItem({ item }) {
+function MobileMenuItem({ item, onNavigate, closeMenu }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const toggleOpen = () => {
+    if (item.link && item.submenu.length === 0) {
+      onNavigate(item.link);
+      closeMenu();
+    } else {
+      setIsOpen(!isOpen);
+    }
+  };
 
   const toggleSubmenu = (index) => {
     setActiveSubmenu(activeSubmenu === index ? null : index);
+  };
+
+  const handleItemClick = (link) => {
+    onNavigate(link);
+    setIsOpen(false);
+    setActiveSubmenu(null);
+    closeMenu();
   };
 
   return (
@@ -281,13 +388,15 @@ function MobileMenuItem({ item }) {
         onClick={toggleOpen}
       >
         <span className="text-sm font-semibold">{item.label}</span>
-        <ChevronDown
-          size={16}
-          className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}
-        />
+        {item.submenu.length > 0 && (
+          <ChevronDown
+            size={16}
+            className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          />
+        )}
       </div>
 
-      {isOpen && (
+      {isOpen && item.submenu.length > 0 && (
         <div className="bg-gray-50">
           {item.submenu.map((submenu, index) => (
             <div key={index} className="border-t border-gray-100">
@@ -307,9 +416,9 @@ function MobileMenuItem({ item }) {
                     <div
                       key={idx}
                       className="py-2 text-sm cursor-pointer hover:text-green-800"
-                      onClick={() => console.log(`Selected: ${submenu.label} > ${subItem}`)}
+                      onClick={() => handleItemClick(subItem.link)}
                     >
-                      {subItem}
+                      {subItem.name}
                     </div>
                   ))}
                 </div>

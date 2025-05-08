@@ -11,25 +11,25 @@ const About = () => {
     // Team members data
     const teamMembers = [
         {
-            image: "/api/placeholder/300/300?text=Fabric+Executive",
+            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
             name: "Sanjay Singh",
             position: "Founder & CEO",
             bio: "With over 25 years in the textile industry, Sanjay has revolutionized fabric sourcing and production."
         },
         {
-            image: "/api/placeholder/300/300?text=Fabric+Designer",
+            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
             name: "Priya Mehta",
             position: "Design Director",
             bio: "A graduate from NIFT with 15 years experience in creating stunning fabric designs for global clients."
         },
         {
-            image: "/api/placeholder/300/300?text=Fabric+Operations",
+            image: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
             name: "Rajiv Kumar",
             position: "Operations Head",
             bio: "Ensuring seamless production and delivery processes across our facilities since 2010."
         },
         {
-            image: "/api/placeholder/300/300?text=Sustainable+Fabrics",
+            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
             name: "Anjali Sharma",
             position: "Sustainability Manager",
             bio: "Leading our eco-friendly initiatives and ensuring ethical production practices."
@@ -45,23 +45,23 @@ const About = () => {
     ];
 
     // Mission & vision content
-        const tabContent = {
-            story: {
-                title: "Our Story",
-                content: "Founded in 1998, our journey began with a simple vision – to blend traditional craftsmanship with modern design sensibilities. What started as a small family venture in the vibrant textile hub of Surat has now evolved into one of India's premier fabric houses, serving clients across the globe. Our commitment to quality and innovation has remained unwavering throughout this incredible journey.",
-                image: "/api/placeholder/600/400?text=Traditional+Fabric+Weaving"
-            },
-            mission: {
-                title: "Our Mission",
-                content: "We are dedicated to preserving the rich heritage of Indian textiles while embracing sustainable practices and innovative technologies. Our mission is to create fabrics that not only meet the highest standards of quality but also respect our planet. We work closely with artisans and communities to ensure fair trade practices and promote traditional craftsmanship.",
-                image: "/api/placeholder/600/400?text=Sustainable+Textile+Production"
-            },
-            vision: {
-                title: "Our Vision",
-                content: "To be the world's most trusted and innovative source of premium fabrics, setting new benchmarks in design, quality, and sustainability. We envision a future where our fabrics become the preferred choice for designers and consumers who value craftsmanship, ethical production, and environmental responsibility.",
-                image: "/api/placeholder/600/400?text=Modern+Fabric+Design+Studio"
-            }
-        };
+    const tabContent = {
+        story: {
+            title: "Our Story",
+            content: "Founded in 1998, our journey began with a simple vision – to blend traditional craftsmanship with modern design sensibilities. What started as a small family venture in the vibrant textile hub of Surat has now evolved into one of India's premier fabric houses, serving clients across the globe. Our commitment to quality and innovation has remained unwavering throughout this incredible journey.",
+            image: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80"
+        },
+        mission: {
+            title: "Our Mission",
+            content: "We are dedicated to preserving the rich heritage of Indian textiles while embracing sustainable practices and innovative technologies. Our mission is to create fabrics that not only meet the highest standards of quality but also respect our planet. We work closely with artisans and communities to ensure fair trade practices and promote traditional craftsmanship.",
+            image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80"
+        },
+        vision: {
+            title: "Our Vision",
+            content: "To be the world's most trusted and innovative source of premium fabrics, setting new benchmarks in design, quality, and sustainability. We envision a future where our fabrics become the preferred choice for designers and consumers who value craftsmanship, ethical production, and environmental responsibility.",
+            image: "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80"
+        }
+    };
 
     // Intersection observer to trigger animations when section becomes visible
     useEffect(() => {
@@ -111,7 +111,7 @@ const About = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: `url(/api/placeholder/1600/1000?text=Premium+Luxury+Fabrics)`,
+                        backgroundImage: `url(https://images.unsplash.com/photo-1537633493919-cf8f2251cde4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&h=1000&q=80)`,
                         backgroundPosition: "center 30%"
                     }}
                 >
@@ -269,9 +269,18 @@ const About = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { name: 'Quality', image: '/api/placeholder/400/300?text=Premium+Fabric+Quality' },
-                            { name: 'Sustainability', image: '/api/placeholder/400/300?text=Eco-Friendly+Textiles' },
-                            { name: 'Innovation', image: '/api/placeholder/400/300?text=Innovative+Fabric+Design' }
+                            { 
+                                name: 'Quality', 
+                                image: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80' 
+                            },
+                            { 
+                                name: 'Sustainability', 
+                                image: 'https://images.unsplash.com/photo-1520923642038-b4259acecbd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80' 
+                            },
+                            { 
+                                name: 'Innovation', 
+                                image: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80' 
+                            }
                         ].map((value, index) => (
                             <div
                                 key={index}
@@ -312,12 +321,36 @@ const About = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { name: 'Organic Cotton', type: 'Natural Fibers', image: '/api/placeholder/500/400?text=Organic+Cotton+Fabric' },
-                            { name: 'Luxury Silk', type: 'Premium Collection', image: '/api/placeholder/500/400?text=Luxury+Silk+Fabric' },
-                            { name: 'Sustainable Linen', type: 'Eco-Friendly', image: '/api/placeholder/500/400?text=Sustainable+Linen' },
-                            { name: 'Jacquard Patterns', type: 'Decorative', image: '/api/placeholder/500/400?text=Jacquard+Pattern+Fabric' },
-                            { name: 'Traditional Ikat', type: 'Heritage', image: '/api/placeholder/500/400?text=Traditional+Ikat+Fabric' },
-                            { name: 'Modern Blends', type: 'Contemporary', image: '/api/placeholder/500/400?text=Modern+Fabric+Blends' }
+                            { 
+                                name: 'Organic Cotton', 
+                                type: 'Natural Fibers', 
+                                image: 'https://images.unsplash.com/photo-1520923642038-b4259acecbd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=400&q=80' 
+                            },
+                            { 
+                                name: 'Luxury Silk', 
+                                type: 'Premium Collection', 
+                                image: 'https://images.unsplash.com/photo-1537633493919-cf8f2251cde4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=400&q=80' 
+                            },
+                            { 
+                                name: 'Sustainable Linen', 
+                                type: 'Eco-Friendly', 
+                                image: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=400&q=80' 
+                            },
+                            { 
+                                name: 'Jacquard Patterns', 
+                                type: 'Decorative', 
+                                image: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=400&q=80' 
+                            },
+                            { 
+                                name: 'Traditional Ikat', 
+                                type: 'Heritage', 
+                                image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=400&q=80' 
+                            },
+                            { 
+                                name: 'Modern Blends', 
+                                type: 'Contemporary', 
+                                image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=400&q=80' 
+                            }
                         ].map((fabric, index) => (
                             <div
                                 key={index}
@@ -364,7 +397,7 @@ const About = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: `url(/api/placeholder/1600/1000?text=Luxury+Fabric+Textures)`,
+                        backgroundImage: `url(https://images.unsplash.com/photo-1537633493919-cf8f2251cde4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&h=1000&q=80)`,
                         backgroundPosition: "center",
                         filter: "brightness(0.3)"
                     }}
