@@ -7,6 +7,7 @@ import BlukOrder from '../Pages/BlukOrder'
 import Fabrics from '../Pages/Fabrics'
 import About from '../Pages/About'
 import Blog from '../Pages/Blog'
+import PremiumCotton from '../Pages/Cotton/PremiumCotton'
 
 function AllRoutes() {
   return (
@@ -19,6 +20,7 @@ function AllRoutes() {
             <Route path="/bulkorder" element={<BlukOrder/>} />
             <Route path="/about" element={<About/>}/>
             <Route path="/blog" element={<Blog/>} />
+            <Route path='/fabrics/cotton/premium' element={<PremiumCotton/>}/>
         </Routes>
     </div>
   )

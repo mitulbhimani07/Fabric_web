@@ -102,7 +102,7 @@ export default function Navbar() {
   };
 
   const handleSearch = (e) => {
-    if (e) e.preventDefault();
+    e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
@@ -120,232 +120,121 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="flex flex-col w-full">
-        {/* Top Banner */}
-        <div className="w-full bg-green-800 text-white p-2 text-center">
-          <span className="text-sm md:text-base">New Arrivals: Premium Cotton Collection</span>
-          <button
-            className="text-pink-300 font-bold ml-2 hover:underline cursor-pointer"
-            onClick={() => handleNavigation('/newarrival')}
-          >
-            SHOP NOW
+      <div className="w-full bg-green-800 text-white p-2 text-center">
+        <span className="text-sm md:text-base">New Arrivals: Premium Cotton Collection</span>
+        <button
+          className="text-pink-300 font-bold ml-2 hover:underline cursor-pointer"
+          onClick={() => handleNavigation('/newarrival')}
+        >
+          SHOP NOW
+        </button>
+      </div>
+
+      <div className="container mx-auto py-3 px-4 flex items-center justify-between">
+        <div className="lg:hidden">
+          <button onClick={toggleMobileMenu} className="text-green-800 hover:text-green-600">
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Header */}
-        <div className="container mx-auto py-3 px-4 flex items-center justify-between">
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button onClick={toggleMobileMenu} className="text-green-800 hover:text-green-600">
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="h-10 md:h-12 w-38 md:w-42 bg-white flex items-center justify-center">
-              <img src={logo} alt="Logo" />
-            </Link>
-          </div>
-
-          {/* Desktop Search */}
-          <div className="hidden md:flex flex-1 mx-6">
-            <form onSubmit={handleSearch} className="relative flex w-full">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search fabrics..."
-                className="w-full px-4 py-2 border border-gray-200 focus:outline-none focus:border-green-600"
-              />
-              <button
-                type="submit"
-                className="bg-green-800 text-white px-4 py-2 hover:bg-green-700 transition"
-              >
-                <Search size={20} />
-              </button>
-            </form>
-          </div>
-
-          {/* Icons */}
-          <div className="flex items-center">
-            <button 
-              className="hidden md:flex items-center mr-4 lg:mr-6 hover:text-green-600"
-              onClick={() => handleNavigation('/stores')}
-            >
-              <MapPin size={20} className="text-green-800 mr-1" />
-              <div className="text-xs">
-                <div className="font-bold text-green-800">STORE LOCATION</div>
-                <div>Find Nearby</div>
-              </div>
-            </button>
-
-            <button 
-              className="hidden sm:flex items-center mr-4 lg:mr-6 hover:text-green-600"
-              onClick={() => handleNavigation('/account')}
-            >
-              <User size={20} className="text-green-800 mr-1" />
-              <div className="text-xs">
-                <div>Login / Signup</div>
-                <div className="font-medium">My account</div>
-              </div>
-            </button>
-
-            <button 
-              className="sm:hidden mr-3 hover:text-green-600"
-              onClick={() => handleNavigation('/account')}
-            >
-              <User size={20} className="text-green-800" />
-            </button>
-
-            {/* Cart Button */}
-            <button
-              className="flex items-center hover:text-green-600"
-              onClick={() => setIsCartModalOpen(true)}
-            >
-              <div className="relative">
-                <ShoppingCart size={22} className="text-green-800" />
-                <span className="absolute -top-2 -right-2 bg-green-800 text-white rounded-full h-4 w-4 flex items-center justify-center text-xs">
-                  {cartCount}
-                </span>
-              </div>
-              <span className="ml-1 text-sm font-medium">Cart</span>
-            </button>
-          </div>
+        <div className="flex items-center">
+          <Link to="/" className="h-10 md:h-12 w-38 md:w-42 flex items-center justify-center">
+            <img src={logo} alt="Logo" />
+          </Link>
         </div>
 
-        {/* Mobile Search */}
-        <div className="md:hidden px-4 py-2 border-t border-gray-200">
-          <div className="relative flex w-full">
+        <div className="hidden md:flex flex-1 mx-6">
+          <form onSubmit={handleSearch} className="relative flex w-full">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search fabrics..."
-              className="w-full px-3 py-1 text-sm border border-gray-200 focus:outline-none focus:border-green-600"
-              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              className="w-full px-4 py-2 border border-gray-200 focus:outline-none focus:border-green-600"
             />
-            <button
-              onClick={handleSearch}
-              className="bg-green-800 text-white px-2 py-1 hover:bg-green-700 transition"
-            >
-              <Search size={16} />
+            <button type="submit" className="bg-green-800 text-white px-4 py-2 hover:bg-green-700 transition">
+              <Search size={20} />
             </button>
-          </div>
+          </form>
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:block border-t border-b border-gray-200" ref={dropdownRef}>
-          <div className="container mx-auto flex justify-center">
-            {menuItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative"
-                onMouseEnter={() => handleMenuEnter(index)}
-                onMouseLeave={handleMenuLeave}
-              >
-                <Link 
-                  to={item.link}
-                  className={`py-3 px-6 flex items-center hover:bg-gray-100 transition cursor-pointer ${activeMenu === index ? 'bg-gray-100 text-green-800' : ''}`}
-                >
-                  <span className="text-sm font-semibold text-gray-800">{item.label}</span>
-                  {item.submenu.length > 0 && <ChevronDown size={14} className="ml-1 text-green-800" />}
-                </Link>
+        <div className="flex items-center">
+          <button onClick={() => handleNavigation('/stores')} className="hidden md:flex items-center mr-4 hover:text-green-600">
+            <MapPin size={20} className="text-green-800 mr-1" />
+            <div className="text-xs">
+              <div className="font-bold text-green-800">STORE LOCATION</div>
+              <div>Find Nearby</div>
+            </div>
+          </button>
 
-                {activeMenu === index && item.submenu.length > 0 && (
-                  <div className="absolute left-0 bg-white shadow-lg border border-gray-200 z-20 w-64">
-                    {item.submenu.map((submenu, subIndex) => (
-                      <div key={subIndex} className="p-4 border-b border-gray-100 last:border-b-0">
-                        <div className="font-medium text-green-800 mb-2">{submenu.label}</div>
-                        <div className="grid">
-                          {submenu.items.map((subItem, idx) => (
-                            <Link
-                              key={idx}
-                              to={subItem.link}
-                              className="text-sm py-1 text-left text-gray-700 hover:text-green-800 transition"
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <Link 
-              to="/newarrival"
-              className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition"
-            >
-              <span className="text-sm font-semibold text-gray-800">NEW ARRIVAL</span>
-            </Link>
-            <Link 
-              to="/blog"
-              className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition"
-            >
-              <span className="text-sm font-semibold text-gray-800">BLOG</span>
-            </Link>
-            <Link 
-              to="/bulkorder"
-              className="py-3 px-6 cursor-pointer hover:bg-gray-100 transition"
-            >
-              <span className="text-sm font-semibold text-gray-800">BULK ORDER</span>
-            </Link>
-          </div>
+          <button onClick={() => handleNavigation('/account')} className="hidden sm:flex items-center mr-4 hover:text-green-600">
+            <User size={20} className="text-green-800 mr-1" />
+            <div className="text-xs">
+              <div>Login / Signup</div>
+              <div className="font-medium">My account</div>
+            </div>
+          </button>
+
+          <button onClick={() => handleNavigation('/account')} className="sm:hidden mr-3 hover:text-green-600">
+            <User size={20} className="text-green-800" />
+          </button>
+
+          <button onClick={() => setIsCartModalOpen(true)} className="flex items-center hover:text-green-600">
+            <div className="relative">
+              <ShoppingCart size={22} className="text-green-800" />
+              <span className="absolute -top-2 -right-2 bg-green-800 text-white rounded-full h-4 w-4 flex items-center justify-center text-xs">
+                {cartCount}
+              </span>
+            </div>
+            <span className="ml-1 text-sm font-medium">Cart</span>
+          </button>
         </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-gray-200">
-            <Link 
-              to="/"
-              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              HOME
-            </Link>
-            <Link 
-              to="/about"
-              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              ABOUT
-            </Link>
-            {menuItems.slice(2).map((item, index) => (
-              <MobileMenuItem 
-                key={index} 
-                item={item} 
-                onNavigate={handleNavigation}
-                closeMenu={() => setMobileMenuOpen(false)}
-              />
-            ))}
-            <Link 
-              to="/blog"
-              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              BLOG
-            </Link>
-            <Link 
-              to="/contact"
-              className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              CONTACT US
-            </Link>
-          </div>
-        )}
       </div>
 
-      {/* Cart Modal */}
+      <div className="hidden lg:block border-t border-b border-gray-200" ref={dropdownRef}>
+        <div className="container mx-auto flex justify-center">
+          {menuItems.map((item, index) => (
+            <div key={index} className="relative" onMouseEnter={() => handleMenuEnter(index)} onMouseLeave={handleMenuLeave}>
+              <Link to={item.link} className={`py-3 px-6 flex items-center hover:bg-gray-100 transition ${activeMenu === index ? 'bg-gray-100 text-green-800' : ''}`}>
+                <span className="text-sm font-semibold text-gray-800">{item.label}</span>
+                {item.submenu.length > 0 && <ChevronDown size={14} className="ml-1 text-green-800" />}
+              </Link>
+
+              {activeMenu === index && item.submenu.length > 0 && (
+                <div className="absolute left-0 bg-white shadow-lg border border-gray-200 z-20 w-64">
+                  {item.submenu.map((submenu, subIndex) => (
+                    <div key={subIndex} className="p-4 border-b border-gray-100 last:border-b-0">
+                      <div className="font-medium text-green-800 mb-2">{submenu.label}</div>
+                      <div className="grid">
+                        {submenu.items.map((subItem, idx) => (
+                          <Link key={idx} to={subItem.link} className="text-sm py-1 text-left text-gray-700 hover:text-green-800 transition">
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+
+          <Link to="/newarrival" className="py-3 px-6 hover:bg-gray-100 transition text-sm font-semibold text-gray-800">NEW ARRIVAL</Link>
+          <Link to="/blog" className="py-3 px-6 hover:bg-gray-100 transition text-sm font-semibold text-gray-800">BLOG</Link>
+          <Link to="/bulkorder" className="py-3 px-6 hover:bg-gray-100 transition text-sm font-semibold text-gray-800">BULK ORDER</Link>
+        </div>
+      </div>
+
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-b border-gray-200">
+          <MobileMenu menuItems={menuItems} closeMenu={() => setMobileMenuOpen(false)} />
+        </div>
+      )}
+
       {isCartModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
-            <button
-              className="absolute top-2 right-2 text-gray-600 hover:text-black"
-              onClick={() => setIsCartModalOpen(false)}
-            >
+            <button className="absolute top-2 right-2 text-gray-600 hover:text-black" onClick={() => setIsCartModalOpen(false)}>
               <X size={20} />
             </button>
             <h2 className="text-lg font-semibold mb-4">Your Cart</h2>
@@ -357,76 +246,55 @@ export default function Navbar() {
   );
 }
 
-function MobileMenuItem({ item, onNavigate, closeMenu }) {
-  const [isOpen, setIsOpen] = useState(false);
+function MobileMenu({ menuItems, closeMenu }) {
+  const navigate = useNavigate();
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
-  const toggleOpen = () => {
-    if (item.link && item.submenu.length === 0) {
-      onNavigate(item.link);
-      closeMenu();
-    } else {
-      setIsOpen(!isOpen);
-    }
-  };
-
-  const toggleSubmenu = (index) => {
-    setActiveSubmenu(activeSubmenu === index ? null : index);
-  };
-
   const handleItemClick = (link) => {
-    onNavigate(link);
-    setIsOpen(false);
-    setActiveSubmenu(null);
+    navigate(link);
     closeMenu();
   };
 
   return (
-    <div className="border-t border-gray-100">
-      <div
-        className="flex items-center justify-between py-3 px-4 cursor-pointer"
-        onClick={toggleOpen}
-      >
-        <span className="text-sm font-semibold">{item.label}</span>
-        {item.submenu.length > 0 && (
-          <ChevronDown
-            size={16}
-            className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          />
-        )}
-      </div>
+    <div>
+      {menuItems.map((item, index) => (
+        <div key={index} className="border-t border-gray-100">
+          <div
+            className="py-3 px-4 text-sm font-semibold cursor-pointer flex justify-between items-center"
+            onClick={() => {
+              if (item.submenu.length === 0) handleItemClick(item.link);
+              else setActiveSubmenu(activeSubmenu === index ? null : index);
+            }}
+          >
+            <span>{item.label}</span>
+            {item.submenu.length > 0 && <ChevronDown size={14} className={`transition-transform ${activeSubmenu === index ? 'rotate-180' : ''}`} />}
+          </div>
 
-      {isOpen && item.submenu.length > 0 && (
-        <div className="bg-gray-50">
-          {item.submenu.map((submenu, index) => (
-            <div key={index} className="border-t border-gray-100">
-              <div
-                className="flex items-center justify-between py-2 px-6 cursor-pointer"
-                onClick={() => toggleSubmenu(index)}
-              >
-                <span className="text-sm font-medium text-green-800">{submenu.label}</span>
-                <ChevronDown
-                  size={14}
-                  className={`transform transition-transform ${activeSubmenu === index ? 'rotate-180' : ''}`}
-                />
-              </div>
-              {activeSubmenu === index && (
-                <div className="px-8 pb-2">
-                  {submenu.items.map((subItem, idx) => (
-                    <div
-                      key={idx}
-                      className="py-2 text-sm cursor-pointer hover:text-green-800"
-                      onClick={() => handleItemClick(subItem.link)}
-                    >
-                      {subItem.name}
-                    </div>
-                  ))}
+          {activeSubmenu === index && item.submenu.length > 0 && (
+            <div className="bg-gray-50">
+              {item.submenu.map((submenu, i) => (
+                <div key={i} className="border-t border-gray-100">
+                  <div className="py-2 px-6 text-sm font-medium text-green-800">{submenu.label}</div>
+                  <div className="px-8 pb-2">
+                    {submenu.items.map((subItem, j) => (
+                      <div
+                        key={j}
+                        className="py-2 text-sm cursor-pointer hover:text-green-800"
+                        onClick={() => handleItemClick(subItem.link)}
+                      >
+                        {subItem.name}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          )}
         </div>
-      )}
+      ))}
+      <Link to="/contact" onClick={closeMenu} className="block border-t border-gray-100 py-3 px-4 font-semibold text-sm">
+        CONTACT US
+      </Link>
     </div>
   );
 }

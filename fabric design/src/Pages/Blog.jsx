@@ -380,6 +380,95 @@ function Blog() {
         </div>
       </section>
 
+       {/* Fabric Story Section */}
+       <section className="relative py-24 bg-white overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 300L1440 0" stroke="black" strokeWidth="0.5" strokeDasharray="5,5" />
+            <path d="M0 100L1440 400" stroke="black" strokeWidth="0.5" strokeDasharray="5,5" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-serif font-light mb-6">
+              <span className="opacity-80">The Art of</span> <span className="italic">Weaving</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Each thread tells a story. Discover the craftsmanship behind our fabrics.
+            </p>
+          </div>
+
+          <div className="relative h-[800px] md:h-[1000px] mb-20">
+            <div 
+            
+              className="absolute inset-0 bg-[url('https://fabricbysinghanias.com/cdn/shop/files/9.png?v=1739023978&width=1800')] bg-cover bg-center opacity-20"
+              style={{ backgroundAttachment: 'fixed' }}
+            ></div>
+
+            <div className="relative h-full flex flex-col justify-center">
+              <div 
+                className="w-full md:w-2/3 bg-white p-8 md:p-12 shadow-xl mb-12 transform transition-all duration-1000 hover:rotate-1 hover:shadow-2xl"
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="w-full md:w-1/2 overflow-hidden rounded-lg">
+                    <img 
+                      src="https://fabricbysinghanias.com/cdn/shop/files/2_12_2024_db.jpg?v=1733141503&width=800" 
+                      alt="Banarasi Silk"
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="w-full md:w-1/2">
+                    <span className="text-sm font-medium text-amber-600 mb-2 block">Since 1927</span>
+                    <h3 className="text-2xl md:text-3xl font-serif mb-4">Banarasi Silk Legacy</h3>
+                    <p className="text-gray-700 mb-6">
+                      Woven with gold & silver zari, our Banarasi silks carry generations of craftsmanship. 
+                      Each piece takes 15-30 days to create by master weavers in Varanasi.
+                    </p>
+                    <button className="text-black border-b border-black pb-1 hover:border-amber-500 transition-all">
+                      Explore the Collection →
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div 
+                className="w-full md:w-2/3 ml-auto bg-stone-50 p-8 md:p-12 shadow-xl transform transition-all duration-1000 hover:-rotate-1 hover:shadow-2xl"
+              >
+                <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
+                  <div className="w-full md:w-1/2 overflow-hidden rounded-lg">
+                    <img 
+                      src="https://fabricbysinghanias.com/cdn/shop/files/9.png?v=1739023978&width=800" 
+                      alt="Premium Linen"
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="w-full md:w-1/2">
+                    <span className="text-sm font-medium text-green-600 mb-2 block">Eco-Friendly</span>
+                    <h3 className="text-2xl md:text-3xl font-serif mb-4">Linen: Nature's Luxury</h3>
+                    <p className="text-gray-700 mb-6">
+                      Grown from flax plants, our linen fabrics are breathable, durable, and become softer with every wash. 
+                      Perfect for sustainable elegance.
+                    </p>
+                    <button className="text-black border-b border-black pb-1 hover:border-green-500 transition-all">
+                      Discover Linen →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button className="relative inline-block px-8 py-4 bg-black text-white rounded-lg overflow-hidden group">
+              <span className="relative z-10">Begin Your Fabric Journey</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              <span className="absolute top-0 left-0 w-10 h-full bg-white/30 -skew-x-12 -translate-x-16 group-hover:translate-x-96 transition-all duration-1000"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Fabric Inspiration Section */}
       <section className="w-full py-16 px-4">
         <div className="max-w-7xl mx-auto">
