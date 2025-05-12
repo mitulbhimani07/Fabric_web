@@ -32,49 +32,41 @@ const TrendingDesigns = () => {
     {
       image: "https://fabricbysinghanias.com/cdn/shop/products/5_2_db2cb20c-da37-4c7c-89f5-1e79533f15e4.jpg?v=1743752590&width=600",
       title: "Zinc Yellow Banarasi Ektara Silk Handloom Fabric With Floral Motifs",
-      price: "Rs. 5,979.00",
       category: "bestseller"
     },
     {
       image: "https://fabricbysinghanias.com/cdn/shop/products/281788-1.jpg?v=1743752307&width=800",
       title: "Yellowish Orange Shade Printed Dupion Silk Fabric",
-      price: "Rs. 1,854.00",
       category: "bestseller"
     },
     {
       image: "https://fabricbysinghanias.com/cdn/shop/files/486836-1.jpg?v=1743750607&width=800",
       title: "Yellow-Orange Printed Pichwai Rawsilk Fabric With Embroidery",
-      price: "Rs. 1,848.00",
       category: "bestseller"
     },
     {
       image: "https://fabricbysinghanias.com/cdn/shop/files/477896-02.jpg?v=1743750972&width=800",
       title: "Yellow-Orange Georgette Fabric With Floral Print",
-      price: "Rs. 974.00",
       category: "bestseller"
     },
     {
       image: "https://fabricbysinghanias.com/cdn/shop/products/455061-02_17d207d5-0408-4ee6-b81c-7003e988efc0.jpg?v=1743751319&width=800",
       title: "Yellow Tussar Floral Printed Fabric",
-      price: "Rs. 853.00",
       category: "bestseller"
     },
     {
       image: "https://fabriccollection.com.au/cdn/shop/products/silk-cotton-fabric-periwinkle_400x.jpg?v=1674895662",
       title: "Blue Silk Cotton Blend",
-      price: "Rs. 2,150.00",
       category: "new"
     },
     {
       image: "https://hpsingh-storage.s3.ap-south-1.amazonaws.com/media/2162625-(4).jpg",
       title: "Green Chanderi Silk",
-      price: "Rs. 1,599.00",
       category: "new"
     },
     {
       image: "https://5.imimg.com/data5/ECOM/Default/2023/1/IO/EZ/IF/85504720/tradeunoday1-776-500x500.jpg",
       title: "Red Embroidered Organza",
-      price: "Rs. 3,250.00",
       category: "new"
     }
   ];
@@ -423,10 +415,6 @@ const TrendingDesigns = () => {
 
                 <div className="relative overflow-hidden">
                   <h3 className="text-sm font-medium line-clamp-2 mb-2 group-hover:text-black transition-colors duration-300">{product.title}</h3>
-                  <p className="font-medium relative">
-                    {product.price}
-                    <span className="absolute bottom-0 left-0 w-0 group-hover:w-full h-px bg-black transition-all duration-500"></span>
-                  </p>
                 </div>
               </div>
             ))}
@@ -459,238 +447,130 @@ const TrendingDesigns = () => {
         </div>
       </div>
 
-
-
-    {/* Special Offer Section */}
-<section className="relative py-20 bg-gradient-to-r from-amber-50 to-rose-50 overflow-hidden">
-  {/* Decorative elements */}
-  <div className="absolute top-0 left-0 w-40 h-40 rounded-full bg-amber-200 blur-3xl opacity-20"></div>
-  <div className="absolute bottom-0 right-0 w-60 h-60 rounded-full bg-rose-200 blur-3xl opacity-20"></div>
-  
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="flex flex-col lg:flex-row items-center">
-      {/* Left side - Image */}
-      <div className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 relative">
-        <div className="relative overflow-hidden rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-all duration-700 h-[500px]"> {/* Increased height */}
-          <img 
-            src="https://fabricbysinghanias.com/cdn/shop/files/desktop_banner.png?v=1742377604&width=1000" 
-            alt="Special Offer" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/40 to-transparent"></div>
-          <div className="absolute top-5 left-5 bg-rose-600 text-white px-3 py-1 rounded-full text-sm font-bold">
-            LIMITED TIME
-          </div>
-        </div>
+      {/* Special Offer Section */}
+      <section className="relative py-20 bg-gradient-to-r from-amber-50 to-rose-50 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-40 h-40 rounded-full bg-amber-200 blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-0 w-60 h-60 rounded-full bg-rose-200 blur-3xl opacity-20"></div>
         
-        {/* Floating discount tag */}
-        <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-xl border-4 border-amber-400">
-          <div className="bg-gradient-to-r from-amber-400 to-rose-500 text-white rounded-full w-24 h-24 flex flex-col items-center justify-center">
-            <span className="text-3xl font-bold">30%</span>
-            <span className="text-xs uppercase">OFF</span>
-          </div>
-        </div>
-      </div>
-      
-      {/* Right side - Content */}
-      <div className="lg:w-1/2 lg:pl-10">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-          <span className="text-rose-600">Premium Textile</span> Exclusive Offer
-        </h2>
-        <p className="text-lg text-gray-700 mb-8">
-          Elevate your wardrobe with our premium fabrics at unprecedented prices. 
-          This exclusive offer won't last long - shop now before time runs out!
-        </p>
-        
-        {/* CTA Button */}
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <button className="relative overflow-hidden bg-black text-white px-8 py-4 rounded-lg font-medium group">
-            <span className="relative z-10">Shop The Sale</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </button>
-          <button className="relative overflow-hidden bg-white text-black px-8 py-4 rounded-lg font-medium border border-black group">
-            <span className="relative z-10">View Collection</span>
-            <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
-          </button>
-        </div>
-        
-        {/* Small text */}
-        <p className="text-sm text-gray-500 mt-6">
-          *Offer valid on selected items only. Use code <span className="font-bold">SUMMER30</span> at checkout.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-          {/* New Exclusive Fabric Offer Section */}
-<section className="py-20 overflow-hidden bg-stone-50 relative">
-  {/* Decorative elements */}
-  <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-amber-100 mix-blend-multiply opacity-40 blur-3xl"></div>
-  <div className="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-rose-100 mix-blend-multiply opacity-30 blur-3xl"></div>
-  
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Section Header */}
-    <div className="text-center mb-14">
-      <h2 className="text-4xl md:text-5xl font-serif mb-4">
-        <span className="text-amber-800">Seasonal</span> Collection
-      </h2>
-      <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-rose-500 mx-auto mb-4"></div>
-      <p className="text-gray-600 max-w-2xl mx-auto">
-        Discover our handpicked selection of premium fabrics at exceptional prices
-      </p>
-    </div>
-    
-    {/* Image Mosaic Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
-      {/* Large feature image */}
-      <div className="md:col-span-8 relative group overflow-hidden rounded-xl shadow-lg h-96 mt-7">
-        <img 
-          src="https://fabricbysinghanias.com/cdn/shop/files/2_12_2024_db.jpg?v=1733141503&width=1400" 
-          alt="Premium Silk Collection" 
-          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-8">
-  <div className="mb-3">
-    <span className="bg-rose-600 text-white text-xs font-bold px-3 py-1 rounded-full inline-block">
-      30% OFF
-    </span>
-  </div>
-  <h3 className="text-white text-2xl md:text-3xl font-serif mb-2">Premium Silk Collection</h3>
-  <p className="text-white/90 mb-4">Handcrafted excellence for your wardrobe</p>
-  <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-    <button className="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-amber-400 transition-colors duration-300">
-      Shop Now
-    </button>
-  </div>
-</div>
-      </div>
-      
-      {/* Right column stack */}
-      <div className="md:col-span-4 grid grid-rows-2 gap-4 md:gap-6">
-        {/* Top right image */}
-        <div className="relative group overflow-hidden rounded-xl shadow-lg">
-          <img 
-            src="https://fabricbysinghanias.com/cdn/shop/files/9.png?v=1739023978&width=800" 
-            alt="Traditional Designs" 
-            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6">
-  <div className="mb-2">
-    <span className="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full inline-block">
-      NEW ARRIVAL
-    </span>
-  </div>
-  <h3 className="text-white text-xl font-serif mb-1">Traditional Designs</h3>
-  <div className="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-    <button className="text-white border-b border-white hover:border-amber-400 hover:text-amber-400 transition-colors duration-300 text-sm">
-      Explore →
-    </button>
-  </div>
-</div>
-        </div>
-        
-        {/* Bottom right image */}
-        <div className="relative group overflow-hidden rounded-xl shadow-lg">
-          <img 
-            src="https://fabricbysinghanias.com/cdn/shop/files/desktop_banner.png?v=1742377604&width=800" 
-            alt="Luxury Fabric" 
-            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-          />
-
-<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6">
-  <div className="mb-2">
-    <span className="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full inline-block">
-    LIMITED STOCK
-    </span>
-  </div>
-  <h3 className="text-white text-xl font-serif mb-1">Luxury Fabric</h3>
-  <div className="transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-    <button className="text-white border-b border-white hover:border-amber-400 hover:text-amber-400 transition-colors duration-300 text-sm">
-    Discover →
-    </button>
-  </div>
-</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* Premium Fabric Showcase */}
-      <section className="relative py-20 bg-gradient-to-b from-stone-50 to-white overflow-hidden">
-        <div className="absolute top-0 left-0 w-32 h-32 rounded-full bg-amber-100 blur-3xl opacity-30"></div>
-        <div className="absolute bottom-10 right-0 w-40 h-40 rounded-full bg-stone-200 blur-3xl opacity-20"></div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4">
-              <span className="opacity-70">Luxury</span> Fabric Collections
+          <div className="flex flex-col lg:flex-row items-center">
+            {/* Left side - Image */}
+            <div className="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-all duration-700 h-[500px]"> {/* Increased height */}
+                <img 
+                  src="https://fabricbysinghanias.com/cdn/shop/files/desktop_banner.png?v=1742377604&width=1000" 
+                  alt="Special Offer" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div className="absolute top-5 left-5 bg-rose-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                  LIMITED TIME
+                </div>
+              </div>
+              
+              {/* Floating discount tag */}
+              <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-xl border-4 border-amber-400">
+                <div className="bg-gradient-to-r from-amber-400 to-rose-500 text-white rounded-full w-24 h-24 flex flex-col items-center justify-center">
+                  <span className="text-3xl font-bold">30%</span>
+                  <span className="text-xs uppercase">OFF</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right side - Content */}
+            <div className="lg:w-1/2 lg:pl-10">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+                <span className="text-rose-600">Premium Textile</span> Exclusive Offer
+              </h2>
+              <p className="text-lg text-gray-700 mb-8">
+                Elevate your wardrobe with our premium fabrics at unprecedented prices. 
+                This exclusive offer won't last long - shop now before time runs out!
+              </p>
+              
+              {/* CTA Button */}
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <button className="relative overflow-hidden bg-black text-white px-8 py-4 rounded-lg font-medium group">
+                  <span className="relative z-10">Shop The Sale</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </button>
+                <button className="relative overflow-hidden bg-white text-black px-8 py-4 rounded-lg font-medium border border-black group">
+                  <span className="relative z-10">View Collection</span>
+                  <span className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                </button>
+              </div>
+              
+              {/* Small text */}
+              <p className="text-sm text-gray-500 mt-6">
+                *Offer valid on selected items only. Use code <span className="font-bold">SUMMER30</span> at checkout.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Seasonal Collection Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4">
+              <span className="text-rose-600">Seasonal</span> Collection
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Handcrafted elegance for the modern connoisseur
+              Discover our handpicked selection of premium fabrics
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Royal Banarasi Silk",
-                price: "From ₹6,999",
-                image: "https://fabricbysinghanias.com/cdn/shop/files/2_12_2024_db.jpg?v=1733141503&width=600",
-                tag: "Bestseller",
-                hoverEffect: "hover:rotate-3 hover:scale-105"
-              },
-              {
-                title: "Heritage Linen",
-                price: "From ₹3,499",
-                image: "https://fabricbysinghanias.com/cdn/shop/files/9.png?v=1739023978&width=600",
-                tag: "Eco-Friendly",
-                hoverEffect: "hover:-rotate-2 hover:scale-105"
-              },
-              {
-                title: "Pichwai Silk",
-                price: "From ₹4,899",
-                image: "https://fabricbysinghanias.com/cdn/shop/files/desktop_banner.png?v=1742377604&width=600",
-                tag: "Hand-Embroidered",
-                hoverEffect: "hover:rotate-1 hover:scale-105"
-              }
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className={`relative group overflow-hidden rounded-xl transition-all duration-500 ease-in-out shadow-lg ${item.hoverEffect}`}
-              >
-                <div className="relative h-80 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                    <h3 className="text-white text-xl font-medium mb-1">{item.title}</h3>
-                    <p className="text-white/90">{item.price}</p>
-                  </div>
-                </div>
-
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-medium shadow-md transform translate-y-0 group-hover:-translate-y-2 transition-all duration-300">
-                  {item.tag}
-                </div>
-
-                <button className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-white text-black px-6 py-2 rounded-full font-medium shadow-lg transition-all duration-500 hover:bg-black hover:text-white">
-                  View Collection
+            {/* Main Collection Image */}
+            <div className="lg:col-span-2 relative group overflow-hidden rounded-2xl">
+              <img 
+                src="https://fabricbysinghanias.com/cdn/shop/files/2_12_2024_db.jpg?v=1733141503&width=1200" 
+                alt="Premium Collection" 
+                className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8">
+                <span className="text-white/90 text-sm mb-2">NEW ARRIVAL</span>
+                <h3 className="text-3xl font-serif text-white mb-4">Premium Silk Collection</h3>
+                <p className="text-white/80 mb-6">Exclusive designs for the season</p>
+                <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-rose-600 hover:text-white transition-all duration-300">
+                  Explore Collection
                 </button>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="text-center mt-16">
-            <button className="relative inline-flex items-center px-8 py-3 bg-black text-white rounded-full overflow-hidden group">
-              <span className="relative z-10">Explore All Fabrics</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-600 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-              <span className="absolute top-0 left-0 w-10 h-full bg-white/30 -skew-x-12 -translate-x-16 group-hover:translate-x-64 transition-all duration-700"></span>
-            </button>
+            {/* Side Images */}
+            <div className="space-y-8">
+              <div className="relative group overflow-hidden rounded-2xl">
+                <img 
+                  src="https://fabricbysinghanias.com/cdn/shop/files/9.png?v=1739023978&width=800" 
+                  alt="Linen Collection" 
+                  className="w-full h-[280px] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                  <span className="text-white/90 text-sm mb-2">TRENDING</span>
+                  <h3 className="text-xl font-serif text-white mb-2">Linen Collection</h3>
+                  <button className="text-white border-b border-white hover:border-rose-400 hover:text-rose-400 transition-colors duration-300 text-sm">
+                    Shop Now →
+                  </button>
+                </div>
+              </div>
+
+              <div className="relative group overflow-hidden rounded-2xl">
+                <img 
+                  src="https://fabricbysinghanias.com/cdn/shop/files/desktop_banner.png?v=1742377604&width=800" 
+                  alt="Designer Series" 
+                  className="w-full h-[280px] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                  <span className="text-white/90 text-sm mb-2">LIMITED EDITION</span>
+                  <h3 className="text-xl font-serif text-white mb-2">Designer Series</h3>
+                  <button className="text-white border-b border-white hover:border-rose-400 hover:text-rose-400 transition-colors duration-300 text-sm">
+                    View Collection →
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
